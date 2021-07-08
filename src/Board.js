@@ -9,14 +9,20 @@ export default function Board (){
         player === 'X' ? setPlayer('O') : setPlayer('X')
     }
 
+    const placeCharacter = (index) => {
+        let newBoard = [...board]
+        newBoard[index] = player
+        setBoard(newBoard)
+    }
+
     return(
         <div>
             <h1>Hello World</h1>
             {/* <h1> {board.join(' || ')} </h1> */}
             <h1 onClick={changePlayer} > {player} </h1>
 
-            <h1>{board[0]}</h1>
-            <h1>{board[1]}</h1>
+            <h1 onClick={() => placeCharacter(0)}>{board[0]}</h1>
+            <h1 onClick={() => placeCharacter(1)}>{board[1]}</h1>
             <h1>{board[2]}</h1>
             <h1>{board[3]}</h1>
             <h1>{board[4]}</h1>
