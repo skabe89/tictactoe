@@ -13,7 +13,8 @@ export default function Board (){
         <div>
             <h1>Hello World</h1>
             <h1> {board.join(' || ')} </h1>
-            <h1>{player}</h1>
+            <h1 onClick={changePlayer} > {player} </h1>
+
         </div>
 
     )
