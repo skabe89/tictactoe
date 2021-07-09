@@ -36,3 +36,22 @@
     transform: rotate(360deg);
   }
 }
+
+.Board-square {
+  position: absolute;
+  left: 15%;
+  width: 70%;
+  height: 70%;
+  background-color: aqua;
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.Board-cell {
+  display: table;
+  height: 33.3%;
+  width: 33.3%;
+  background-color: bisque;
+  vertical-align: middle;
+  text-align: center;
+}
