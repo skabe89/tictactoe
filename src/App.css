@@ -48,7 +48,7 @@
 }
 
 .Board-cell {
-  display: table;
+  display: table-cell;
   height: 33.3%;
   width: 33.3%;
   background-color: bisque;
