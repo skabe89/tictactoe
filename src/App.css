@@ -38,20 +38,18 @@
 }
 
 .Board-square {
+  width: 600px;
+  height: 600px;
   position: absolute;
-  left: 15%;
-  width: 70%;
-  height: 70%;
+  margin: 0 auto;
   background-color: aqua;
-  display: flex;
-  flex-wrap: wrap;
+  display: grid;
+  grid-template: repeat(3, 1fr) / repeat(3, 1fr);
 }
 
 .Board-cell {
-  display: table-cell;
-  height: 33.3%;
-  width: 33.3%;
-  background-color: bisque;
-  vertical-align: middle;
-  text-align: center;
+ justify-content: center;
+ align-items: center;
+ display: flex;
+ border: 2px solid black;
 }
