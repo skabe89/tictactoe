@@ -4,6 +4,7 @@ export default function Board (){
 
     const [player, setPlayer] = useState("X")
     const [board, setBoard] = useState(['.', '.', '.', '.', '.', '.', '.', '.', '.'])
+    const [won, setWon] = useState(false)
 
     const wins = [
         [0, 1, 2], [3, 4, 5], [6, 7, 8],
@@ -29,11 +30,13 @@ export default function Board (){
     }
 
     const checkWin = () => {
-        let won = false
         wins.forEach(combo => {
+            let won = false
             if(board[combo[0]] === player && board[combo[1]] === player && board[combo[2]] === player){
                 console.log(board[combo[0]])
-                won = true
+                console.log(combo)
+                console.log(player)
+                setWon(true)
             }
         })
         return won
@@ -44,7 +47,7 @@ export default function Board (){
             <h1>Tic Tac Toe</h1>
             {/* <h1> {board.join(' || ')} </h1> */}
             <h1 onClick={changePlayer} > {player}'s Turn </h1>
-
+            {won === true ? <h1>Won!</h1> : <h1>"keep playing"</h1>}
             <div className="Board-square">
                 <h1 className="Board-cell" onClick={() => placeCharacter(0)}>{board[0]}</h1>
                 <h1 className="Board-cell" onClick={() => placeCharacter(1)}>{board[1]}</h1>
